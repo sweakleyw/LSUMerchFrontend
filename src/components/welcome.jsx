@@ -38,36 +38,42 @@ export default function Welcome() {
   }
 
   return (
-    <div id="home-page">
-      <div ref={topOfHome} className="tigersden-banner">
+    <div id='home-page'>
+      <div
+        ref={topOfHome}
+        className='tigersden-banner'>
         <div onClick={handleScrollToStore}>
           <span>Shop Now!</span>
         </div>
-        <img src={tigersdenbanner} alt="tigersden banner" />
+        <img
+          src={tigersdenbanner}
+          alt='tigersden banner'
+        />
       </div>
-      <h2 ref={featuredContainer} id="featured-header">
+      <h2
+        ref={featuredContainer}
+        id='featured-header'>
         Check Out Some of Today's Featured Items!
       </h2>
-      <div className="home-cards-container">
+      <div className='home-cards-container'>
         {featured.length > 0 ? (
           featured.map((product) => (
             <div
-              id="card"
+              id='card'
               key={product.id}
-              className="product-card"
-              onClick={() => navigate(`/products/${product.id}`)}
-            >
-              <h1 className="product-name">{product.name}</h1>
+              className='product-card'
+              onClick={() => navigate(`/products/${product.id}`)}>
+              <h1 className='product-name'>{product.name}</h1>
               <img
-                className="product-image"
+                className='product-image'
                 src={product.imageURL}
                 alt={products.name}
               />
-              <div className="product-price">Price: {product.price}</div>
+              <div className='product-price'>Price: {product.price}</div>
 
               <ThemeProvider theme={theme}>
                 <Button
-                  className="product-btn"
+                  className='product-btn'
                   onClick={(e) => {
                     addToCart(
                       e,
@@ -79,8 +85,7 @@ export default function Welcome() {
                       token,
                       inCartToast
                     );
-                  }}
-                >
+                  }}>
                   Add to Cart
                 </Button>
               </ThemeProvider>
@@ -91,33 +96,38 @@ export default function Welcome() {
         )}
       </div>
       <div>
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img
-         alt="Creative Commons License"
-         style={{ borderWidth: 0 }}
-         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
-        />
-      </a>
-      <br />
-      <span
-        xmlns:dct="http://purl.org/dc/terms/"
-        href="http://purl.org/dc/dcmitype/StillImage"
-        property="dct:title"
-        rel="dct:type"
-      >
-        Tigers Den
-      </span>{" "}
+        <a
+          rel='license'
+          href='http://creativecommons.org/licenses/by-sa/4.0/'>
+          <img
+            alt='Creative Commons License'
+            style={{ borderWidth: 0 }}
+            src='https://i.creativecommons.org/l/by-sa/4.0/80x15.png'
+          />
+        </a>
+        <br />
+        <span
+          xmlns:dct='http://purl.org/dc/terms/'
+          href='http://purl.org/dc/dcmitype/StillImage'
+          property='dct:title'
+          rel='dct:type'>
+          Tigers Den
+        </span>{" "}
         is licensed under a{" "}
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        Creative Commons Attribution-ShareAlike 4.0 International License
-      </a>
-      <br />
+        <a
+          rel='license'
+          href='http://creativecommons.org/licenses/by-sa/4.0/'>
+          Creative Commons Attribution-ShareAlike 4.0 International License
+        </a>
+        <br />
         Based on a work at{" "}
-      <a href="https://commons.wikimedia.org/wiki/File:LSU_football_game.jpg">
-        Getawaypaul27
-      </a>
-      <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>,
-      via Wikimedia Commons
+        <a href='https://commons.wikimedia.org/wiki/File:LSU_football_game.jpg'>
+          Getawaypaul27
+        </a>
+        <a href='https://creativecommons.org/licenses/by-sa/4.0'>
+          CC BY-SA 4.0
+        </a>
+        , via Wikimedia Commons
       </div>
     </div>
   );
