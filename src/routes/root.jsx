@@ -9,6 +9,7 @@ import { createTheme } from "@mui/material/styles";
 import { addLoggedOutCartToUser } from "../components/utils/cartFunctions";
 
 import toast, { Toaster } from "react-hot-toast";
+import LoadingPage from "../loading";
 
 export const inCartToast = () => toast("Item Already In Cart");
 
@@ -111,19 +112,24 @@ const Root = () => {
   }, [cart]);
 
   if (isLoadingProducts) {
-    return <>Loading...</>;
+    return <LoadingPage />;
   }
 
   return (
     <>
-      <Header user={user} setUser={setUser} setToken={setToken} cart={cart} />
+      <Header
+        user={user}
+        setUser={setUser}
+        setToken={setToken}
+        cart={cart}
+      />
       <Nav
         user={user}
         setUser={setUser}
         setToken={setToken}
         topOfHome={topOfHome}
       />
-      <div id="main">
+      <div id='main'>
         <Outlet
           context={{
             theme,
@@ -135,8 +141,8 @@ const Root = () => {
             cart,
             setCart,
             setProducts,
-            isLoadingProducts,
-            setIsLoadingProducts,
+            // isLoadingProducts,
+            // setIsLoadingProducts,
             orders,
             setOrders,
             topOfHome,
@@ -151,7 +157,7 @@ const Root = () => {
               fontSize: "30px",
             },
           }}
-          position="bottom-center"
+          position='bottom-center'
         />
       </div>
     </>
